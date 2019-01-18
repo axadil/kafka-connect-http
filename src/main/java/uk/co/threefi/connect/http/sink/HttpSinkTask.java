@@ -68,7 +68,7 @@ public class HttpSinkTask extends SinkTask {
           e
       );
       if (remainingRetries == 0) {
-        throw new ConnectException(e);
+        log.warn("Connection error " + e)
       } else {
         writer.closeQuietly();
         initWriter();
